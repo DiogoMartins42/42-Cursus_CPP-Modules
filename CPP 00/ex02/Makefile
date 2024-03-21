@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phone
+NAME = Accounts
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
@@ -19,7 +19,7 @@ RM = rm -rf
 all: $(NAME)
 
 $(NAME):
-		@ $(CC) $(FLAGS) Phone.cpp Contacts.cpp PhoneBook.cpp Contacts.hpp PhoneBook.hpp 
+		@ $(CC) $(FLAGS) Account.cpp tests.cpp Account.hpp -o $(NAME)
 
 clean:
 		@ $(RM) $(NAME)

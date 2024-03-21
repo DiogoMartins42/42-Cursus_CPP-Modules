@@ -22,7 +22,7 @@ int main(void){
         if (input.compare("ADD") == 0)
             book.addContact();
         else if (input.compare("SEARCH") == 0){
-            book.printContact();
+            book.printContacts();
             book.search();
         }
         std::cout << "> " << std::flush;

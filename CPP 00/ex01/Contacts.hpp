@@ -14,7 +14,30 @@
 // Created by dmanuel- on 10/25/23.
 //
 
-#ifndef CPP_00_CONTACTS_H
-#define CPP_00_CONTACTS_H
+#ifndef CONTACTS_H
+#define CONTACTS_H
+
+#include <iostream>
+#include <iomanip>
+
+class Contact
+{
+    private:
+        std::string _firstName;
+        std::string _lastName;
+        std::string _phoneNumber;
+        int         _index;
+
+        std::string _printLen(std::string str) const;
+        std::string _getInput(std::string str) const;
+
+        public:
+            Contact();
+            ~Contact();
+            void    init(void);
+            void    view(int index) const;
+            void    display(int index) const;
+            void    setIndex(int i);
+};
 
 #endif //CPP_00_CONTACTS_H

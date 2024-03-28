@@ -18,6 +18,7 @@
 #define PHONEBOOK_HPP
 
 #include "Contacts.hpp"
+#include <limits>
 
 class PhoneBook
 {

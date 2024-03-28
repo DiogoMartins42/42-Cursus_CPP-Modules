@@ -15,11 +15,13 @@ NAME = phone
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
+OBJS = Phone.cpp Contacts.cpp PhoneBook.cpp
+HEADER = Contacts.hpp PhoneBook.hpp
 
 all: $(NAME)
 
-$(NAME):
-		@ $(CC) $(FLAGS) Phone.cpp Contacts.cpp PhoneBook.cpp Contacts.hpp PhoneBook.hpp 
+$(NAME): $(OBJS) $(HEADER)
+		@ $(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
 		@ $(RM) $(NAME)

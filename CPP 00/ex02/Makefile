@@ -15,11 +15,13 @@ NAME = Accounts
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
+OBJS = Account.cpp tests.cpp
+HEADER = Account.hpp
 
 all: $(NAME)
 
-$(NAME):
-		@ $(CC) $(FLAGS) Account.cpp tests.cpp Account.hpp -o $(NAME)
+$(NAME): $(OBJS) $(HEADER)
+		@ $(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 clean:
 		@ $(RM) $(NAME)

@@ -5,25 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmanuel- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 15:02:21 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/05/23 15:02:22 by dmanuel-         ###   ########.fr       */
+/*   Created: 2024/05/27 10:35:22 by dmanuel-          #+#    #+#             */
+/*   Updated: 2024/05/27 10:35:24 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Fixed.hpp"
+#include "ClapTrap.hpp"
 
-int main( void ) 
+int main (void)
 {
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
+    ClapTrap a;
+    ClapTrap b("Named");
+    ClapTrap reparing;
 
-    c = b;
+    a.attack("Named");
+    b.beRepaired(2147483647);
+    a.takeDamage(2147483647);
+    a.attack("Tomato");
 
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-
-    return 0;
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
+    reparing.beRepaired(1);
 }

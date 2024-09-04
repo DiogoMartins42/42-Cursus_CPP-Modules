@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -18,20 +18,20 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
-    private:
-        const std::string   name;
-        const int reqGrade;
-        const int execGrade;
-        bool                isSigned;
+
+    const std::string   name;
+    const int reqGrade;
+    const int execGrade;
+    bool                isSigned;
 
     public:
-        Form();
-        Form(const std::string& name, int reqGrade, int execGrade);
-        Form(const Form&);
-        Form& operator=(const Form&);
-        ~Form();
+        AForm();
+        AForm(const std::string& name, int reqGrade, int execGrade);
+        AForm(const AForm&);
+        AForm& operator=(const AForm&);
+        virtual ~AForm();
 
 
         std::string getName() const;
@@ -40,6 +40,7 @@ class Form
         int     GradeExec() const;
 
         void    beSigned(const Bureaucrat& bureaucrat);
+        virtual void execute(Bureaucrat const& executor) const = 0;
        
         class GradeTooHighException : public std::exception
         {
@@ -54,4 +55,4 @@ class Form
         };
 };
 
-std::ostream& operator <<(std::ostream&, const Form&);
+std::ostream& operator <<(std::ostream&, const AForm&);

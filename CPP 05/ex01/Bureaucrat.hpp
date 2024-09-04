@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:55:41 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/02 14:31:25 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/04 10:36:29 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 #include <iostream>
 #include <exception>
-#include <Form.hpp>
+#include "Form.hpp"
 
-class From;
+class Form;
 
 class Bureaucrat
 {
@@ -35,7 +35,6 @@ class Bureaucrat
 
         std::string getName() const;
         int getGrade() const;
-
         void incrementGrade();
         void decrementGrade();
 

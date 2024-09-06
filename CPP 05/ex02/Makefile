@@ -6,7 +6,7 @@
 #    By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 13:00:05 by dmanuel-          #+#    #+#              #
-#    Updated: 2024/09/04 15:11:21 by dmanuel-         ###   ########.fr        #
+#    Updated: 2024/09/06 10:35:21 by dmanuel-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ $(NAME): $(OBJS)
 		@ $(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-		@ $(RM) $(NAME)
+		@ $(RM) $(OBJS)
 
 fclean:
 		@ $(RM) $(NAME)
 
-re: clean all
+re: clean fclean all

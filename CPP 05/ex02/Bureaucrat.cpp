@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:55:33 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/04 14:59:01 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/06 10:24:50 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,14 @@ void Bureaucrat::executeForm(const AForm& form)
         form.execute(*this);
         if (!form.getSigned())
         {
-            
+            std::cout << form.getName() << " is not signed, can`t be executed." << std::endl;
         }
+        std::cout << this->name << " executed the " << form.getName()
+            << std::endl;
     }
     catch(std::exception& e)
     {
-        std::cout << this->name << " couldn`t sign " << 
+        std::cout << this->name << " couldn`t execute " << 
         form.getName() << " because " << e.what();
     }
 }

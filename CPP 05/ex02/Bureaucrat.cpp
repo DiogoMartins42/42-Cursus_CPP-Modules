@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:55:33 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/06 10:24:50 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/09 11:01:09 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ std::ostream& operator<<(std::ostream& op, const Bureaucrat& Bureaucrat)
     return (op);
 }
 
-void Bureaucrat::executeForm(const AForm& form)
+void Bureaucrat::executeForm(AForm const & form)
 {
      try
     {

@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 12:55:50 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/06 15:05:23 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:38:31 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int main(void)
         }
         {
             std::cout << std::endl;
-            form = intern.makeForm("Shruubbery", "John Bush");
+            form = intern.makeForm("Shrubbery", "John Bush");
             if (form)
                 std::cout << *form;
             delete form;
         }
         {
             std::cout << std::endl;
-            form = intern.makeForm("Robotomyu", "John Robot");
+            form = intern.makeForm("Robotomy", "John Robot");
             if (form)
                 std::cout << *form;
             delete form;

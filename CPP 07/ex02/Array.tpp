@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 14:17:54 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/18 10:43:54 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/19 14:01:13 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Array<T>::Array(unsigned int n) : arr(new T[n]), arrSize(n)
 template<typename T>
 Array<T>::Array(const Array<T>& val) : arr(new T[val.size()]), arrSize(val.size())
 {
-    for (unsigned int i = 0; i < val.size; i++)
+    for (unsigned int i = 0; i < val.size(); i++)
         this->arr[i] = val.arr[i];
 }
 
@@ -39,7 +39,7 @@ Array<T>& Array<T>::operator=(const Array<T>& val)
 {
     if (this == &val)
         return (*this);
-    delete[] this->arr;
+     delete[] this->arr;
     this->arr = new T[val.size()];
     for (unsigned int i = 0; i < val.size(); i++)
         this->arr[i] = val.arr[i];
@@ -50,7 +50,7 @@ Array<T>& Array<T>::operator=(const Array<T>& val)
 template<typename T>
 Array<T>::~Array()
 {
-       delete [] this->arr;
+    delete[] this->arr;
 }
 
 template<typename T>
@@ -62,7 +62,7 @@ unsigned int Array<T>::size() const
 template<typename T>
 T& Array<T>::operator[](unsigned int n)
 {
-    if (n > this->size())
+    if (n >= this->size())
         throw(Array<T>::OutOfBoundsException());
     return (this->arr[n]);
 }

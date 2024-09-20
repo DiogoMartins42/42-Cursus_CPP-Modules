@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 14:14:46 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/19 14:59:15 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/20 14:09:42 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ class Span
         ~Span();
 
         void addNumber(int numb);
-        int shortesSpan();
-        int longestSpawn();
+        int shortestSpan();
+        int longestSpan();
+
+        void createNumbers(std::vector<int>::iterator first, std::vector<int>::iterator last);
 
     class TooManyException : public std::exception
     {

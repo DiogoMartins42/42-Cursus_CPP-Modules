@@ -6,16 +6,16 @@
 #    By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 13:00:05 by dmanuel-          #+#    #+#              #
-#    Updated: 2024/09/18 10:44:21 by dmanuel-         ###   ########.fr        #
+#    Updated: 2024/09/20 14:29:40 by dmanuel-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Array
+NAME = MutantStack
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
-SRCS = main.cpp
+SRCS = main.cpp 
 OBJS=$(SRCS:.cpp=.o)
 
 

@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:27:41 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/23 14:45:16 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:19:32 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ T convertString(const std::string& string)
 }
 
 template <typename T>
-bool validRate(T& date)
+bool validRate(T& rate)
 {
-    if (rate < std::numeric_limits<int>::min() || rate > std::numeric_limits<int>max())
+    if (rate < std::numeric_limits<int>::min() || rate > std::numeric_limits<int>::max())
         return false;
     if (rate < 0)
     {

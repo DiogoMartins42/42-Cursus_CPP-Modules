@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 14:35:04 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/23 15:02:24 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:30:12 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ bool validDate(const std::string& date)
         getline(ssBuffer, Buffer[i], '-');
         dates[i] = convertString<int>(Buffer[i]);
     }
-    if (dates[0] < 2000 || dates[0] > 2100)
+    if (dates[0] < 2009 || dates[0] > 2022)
         valid = false;
     if(dates[1] < 1 || dates[1] > 12)
         valid = false;
@@ -59,7 +59,7 @@ void openfile(const std::string& file, std::fstream* fstream)
 
 int main(int argc, char** argv)
 {
-    if (argc = 2)
+    if (argc != 2)
     {
         std::cerr << "Format: /btc <input_file>\n";
         return (1);

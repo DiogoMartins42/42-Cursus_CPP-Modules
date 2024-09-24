@@ -6,7 +6,7 @@
 /*   By: dmanuel- <dmanuel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 11:27:43 by dmanuel-          #+#    #+#             */
-/*   Updated: 2024/09/23 14:50:09 by dmanuel-         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:35:02 by dmanuel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void BitcoinExchange::readData(std::map<std::string, std::string>& map)
     openfile("data.csv", &fstream);
     if (!fstream.is_open())
         return ;
-    if(!getline(fstream,buffer) || buffer != "data,exchange_rate")
+    if(!getline(fstream,buffer) || buffer != "date,exchange_rate")
     {
-        std::cout << "Wrong data.cvs type of file!\n";
+        std::cout << "Wrong data.csv type of file!\n";
         fstream.close();
     }
     while(getline(fstream, buffer))
@@ -57,7 +57,7 @@ void BitcoinExchange::readData(std::map<std::string, std::string>& map)
     fstream.close();
 }
 
-static float getRate(std::map<std::string, std::string>& map, const std::string& date, const std::string& rate)
+static float getRate(std::map<std::string, std::string> map, const std::string& date, const std::string& rate)
 {
     for (std::map<std::string, std::string>::reverse_iterator it = map.rbegin();
 		 it != map.rend(); ++it)
@@ -74,7 +74,11 @@ static void convertRates(const std::map<std::string, std::string>& map, const st
     std::string DateRate[2];
     float flo;
 
-    getline(ssBuffer, DateRates[0],'|');
+    getline(ssBuffer, DateRate[0],'|');
+    while(DateRate[0][DateRate[0].size() -1] == ' ')
+        DateRate[0].erase(DateRate[0].end() - 1);
+        
+    getline(ssBuffer, DateRate[1]);
     while (DateRate[1][0] == ' ')
         DateRate[1].erase(0,1);
     if (DateRate[1].empty())
@@ -108,7 +112,7 @@ void BitcoinExchange::exchangeBitcoin(const std::map<std::string,std::string>& m
     openfile(file, &fstream);
     if (!fstream.is_open())
         return ;
-    if (!getline(fstream, buffer) || buffer != "date | rate")
+    if (!getline(fstream, buffer) || buffer != "date | value")
     {
         std::cout << "Error: " << file << ": empty or unsupported file\n";
         fstream.close();
